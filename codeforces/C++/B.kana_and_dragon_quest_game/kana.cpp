@@ -1,27 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int t;cin >> t;
-    while(t--){
-        int h,a,l; cin >> h >> a >> l;
-        l *= 10;
-        if(l >= h)cout << "YES" <<  endl;
+typedef long long ll;
 
-        else{
-            while(a >= 0){
-                if(h <= 0)break;
-                if(h <= l){
-                    h -= l;
-                    break;
-                }
-                h = (h/2)+10;
-                a--;
-            }
-            if(h == 0)cout << "YES" << endl;
-            else cout << "NO" << endl;
+int main(){
+    int t; cin >> t;
+    while(t--){
+        ll h,n,m; cin >> h >> n;
+        while(h > 20 && n != 0){
+            h = (h/2)+10;
+            n--;
         }
-        
+        cin >> m;
+        m*=10;
+        if(h <= m)cout << "YES" << endl;
+        else cout << "NO" << endl;
     }
     return 0;
 }
